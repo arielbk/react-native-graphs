@@ -2,7 +2,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import * as React from 'react';
 
 import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
+import RevolutScreen from '../screens/RevolutScreen';
+import BarGraphScreen from '../screens/BarGraphScreen';
 import LinksScreen from '../screens/LinksScreen';
 
 const BottomTab = createBottomTabNavigator();
@@ -17,10 +18,18 @@ export default function BottomTabNavigator({ navigation, route }) {
   return (
     <BottomTab.Navigator initialRouteName={INITIAL_ROUTE_NAME}>
       <BottomTab.Screen
-        name="Home"
-        component={HomeScreen}
+        name="BarGraph"
+        component={BarGraphScreen}
         options={{
-          title: 'Get Started',
+          title: 'BarGraph',
+          tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-code-working" />,
+        }}
+      />
+      <BottomTab.Screen
+        name="Revolut"
+        component={RevolutScreen}
+        options={{
+          title: 'Revolut',
           tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name="md-code-working" />,
         }}
       />
